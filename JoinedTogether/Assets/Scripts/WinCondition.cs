@@ -17,15 +17,12 @@ public class WinCondition : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        won = true;
         foreach (Win win in places)
         {
             if (!win.active)
             {
                 won = false;
-            }
-            else
-            {
-                won = true;
             }
         }
         if (won)

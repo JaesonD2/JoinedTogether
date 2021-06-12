@@ -8,7 +8,7 @@ public class TriggerTopUnfade : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.name == "BlueSelector")
+        if (collision.name == "CyanSelector")
         {
             topCamera.Fade(false);
         }
