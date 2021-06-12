@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 755561303, guid: 4fae5661a5136aa43a893fa397df0419, type: 3}
       propertyPath: blueRB
       value: 
-      objectReference: {fileID: 3590254688018207707}
+      objectReference: {fileID: 0}
     - target: {fileID: 824243973, guid: 4fae5661a5136aa43a893fa397df0419, type: 3}
       propertyPath: m_Size.x
       value: 1
@@ -106,12 +106,47 @@ PrefabInstance:
       propertyPath: m_Name
       value: Blue
       objectReference: {fileID: 0}
+    - target: {fileID: 7778144879569534027, guid: 4fae5661a5136aa43a893fa397df0419,
+        type: 3}
+      propertyPath: m_InstanceId
+      value: -142102
+      objectReference: {fileID: 0}
+    - target: {fileID: 7778144879569534030, guid: 4fae5661a5136aa43a893fa397df0419,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.21960786
+      objectReference: {fileID: 0}
+    - target: {fileID: 7778144879569534030, guid: 4fae5661a5136aa43a893fa397df0419,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.97647065
+      objectReference: {fileID: 0}
+    - target: {fileID: 7778144879569534030, guid: 4fae5661a5136aa43a893fa397df0419,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7778144880227436961, guid: 4fae5661a5136aa43a893fa397df0419,
+        type: 3}
+      propertyPath: cyanRB
+      value: 
+      objectReference: {fileID: 6494929616906202488}
+    - target: {fileID: 7778144880227436965, guid: 4fae5661a5136aa43a893fa397df0419,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7778144880227436974, guid: 4fae5661a5136aa43a893fa397df0419,
+        type: 3}
+      propertyPath: m_Name
+      value: Cyan
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 824243979, guid: 4fae5661a5136aa43a893fa397df0419, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 4fae5661a5136aa43a893fa397df0419, type: 3}
---- !u!50 &3590254688018207707 stripped
+--- !u!50 &6494929616906202488 stripped
 Rigidbody2D:
-  m_CorrespondingSourceObject: {fileID: 824243974, guid: 4fae5661a5136aa43a893fa397df0419,
+  m_CorrespondingSourceObject: {fileID: 7778144880227436965, guid: 4fae5661a5136aa43a893fa397df0419,
     type: 3}
   m_PrefabInstance: {fileID: 3590254687768634589}
   m_PrefabAsset: {fileID: 0}

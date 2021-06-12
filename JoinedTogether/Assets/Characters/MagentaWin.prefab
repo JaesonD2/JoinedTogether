@@ -86,7 +86,7 @@ GameObject:
   - component: {fileID: 9175627033196929173}
   - component: {fileID: 9175627033196929161}
   m_Layer: 0
-  m_Name: RedWin
+  m_Name: MagentaWin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -196,7 +196,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 187b5b104a5536c4c9dfeff16615a6af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  acceptedCol: Red
+  acceptedCol: Magenta
   active: 0
 --- !u!114 &9175627033196929161
 MonoBehaviour:
@@ -1516,7 +1516,7 @@ ParticleSystem:
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 0}
-        key1: {r: 0.9058824, g: 0.06666667, b: 0.13725491, a: 1}
+        key1: {r: 1, g: 0.25882354, b: 0.7607844, a: 1}
         key2: {r: 0, g: 0, b: 0, a: 1}
         key3: {r: 0, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
