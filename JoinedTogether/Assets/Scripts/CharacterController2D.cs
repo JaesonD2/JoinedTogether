@@ -26,6 +26,8 @@ public class CharacterController2D : MonoBehaviour
 	public bool hasAudio;
 	private AudioManager audioManager;
 
+	private Animator animator;
+
 	public Transform mySprite;
 
 	[Header("Events")]
@@ -38,6 +40,7 @@ public class CharacterController2D : MonoBehaviour
 
 	private void Awake()
 	{
+		animator = GetComponentInChildren<Animator>();
 		if (hasAudio)
 			audioManager = FindObjectOfType<AudioManager>();
 
@@ -51,6 +54,7 @@ public class CharacterController2D : MonoBehaviour
 	{
 		bool wasGrounded = m_Grounded;
 		m_Grounded = false;
+		animator.SetBool("Grounded", false);
 
 		// The player is grounded if a circlecast to the groundcheck position hits anything designated as ground
 		// This can be done using layers instead but Sample Assets will not overwrite your project settings.
@@ -59,11 +63,11 @@ public class CharacterController2D : MonoBehaviour
 		{
 			if (colliders[i].gameObject != gameObject)
 			{
+				animator.SetBool("Grounded", true);
 				coyoteCount = 0;
 				m_Grounded = true;
 				if (!wasGrounded)
                 {
-					
 					OnLandEvent.Invoke();
                 }	
 			}
@@ -109,6 +113,8 @@ public class CharacterController2D : MonoBehaviour
 
 		if (coyoteCount < coyoteAllowance && jumpBuffer < jumpBufferAllowance)
 		{
+			animator.SetTrigger("Jumped");
+			animator.SetBool("Grounded", false);
 			if(audioManager != null)
             {
 				audioManager.Play("Jump");
