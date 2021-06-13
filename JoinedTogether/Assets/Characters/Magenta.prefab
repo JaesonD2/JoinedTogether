@@ -130,10 +130,11 @@ MonoBehaviour:
   m_AirControl: 1
   m_WhatIsGround:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 279
   m_GroundCheck: {fileID: 6494929618224708806}
   m_CeilingCheck: {fileID: 6494929616827436579}
   goBackwards: 0
+  hasAudio: 0
   mySprite: {fileID: 6494929617258228540}
   OnLandEvent:
     m_PersistentCalls:

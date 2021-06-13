@@ -23,6 +23,8 @@ public class CharacterController2D : MonoBehaviour
 	private int jumpBufferAllowance = 5;
 
 	public bool goBackwards = false;
+	public bool hasAudio;
+	private AudioManager audioManager;
 
 	public Transform mySprite;
 
@@ -36,6 +38,9 @@ public class CharacterController2D : MonoBehaviour
 
 	private void Awake()
 	{
+		if (hasAudio)
+			audioManager = FindObjectOfType<AudioManager>();
+
 		m_Rigidbody2D = GetComponent<Rigidbody2D>();
 
 		if (OnLandEvent == null)
@@ -104,6 +109,10 @@ public class CharacterController2D : MonoBehaviour
 
 		if (coyoteCount < coyoteAllowance && jumpBuffer < jumpBufferAllowance)
 		{
+			if(audioManager != null)
+            {
+				audioManager.Play("Jump");
+            }
 			coyoteCount = coyoteAllowance;
 			jumpBuffer = jumpBufferAllowance;
 			// Add a vertical force to the player.
