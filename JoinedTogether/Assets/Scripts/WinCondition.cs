@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class WinCondition : MonoBehaviour
 {
+    public Animator transition;
     public List<Win> places;
     private bool won = false;
 
@@ -27,8 +28,18 @@ public class WinCondition : MonoBehaviour
         }
         if (won)
         {
-            Debug.Log("UWIN");
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
+            StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex+1));
         }
+    }
+
+    IEnumerator LoadLevel(int levelIndex)
+    {
+        //play animation
+        transition.SetTrigger("Start");
+        //wait
+        yield return new WaitForSeconds(1);
+
+        //load
+        SceneManager.LoadScene(levelIndex);
     }
 }
