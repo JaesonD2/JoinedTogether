@@ -240,9 +240,10 @@ MonoBehaviour:
   m_AirControl: 1
   m_WhatIsGround:
     serializedVersion: 2
-    m_Bits: 55
+    m_Bits: 4294967295
   m_GroundCheck: {fileID: 7778144879243368475}
   m_CeilingCheck: {fileID: 7778144880563890942}
+  goBackwards: 0
   mySprite: {fileID: 7778144878801080289}
   OnLandEvent:
     m_PersistentCalls:
@@ -273,11 +274,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b96060db29b4ac4bb9377db98ccacd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cyanRB: {fileID: 6494929616906202488, guid: 46c42c43e9cc0f34da475675618dac4b, type: 3}
-  yellowRB: {fileID: 6494929616906202488, guid: 800a959f3ccf13241bf49cfde77168a3,
-    type: 3}
-  magentaRB: {fileID: 6494929616906202488, guid: dcb59eb38e6c1bf4b91138f6dd22b17e,
-    type: 3}
+  currentSelected: 
+  CyanSelector: {fileID: 0}
+  YellowSelector: {fileID: 0}
+  MagentaSelector: {fileID: 0}
+  CyanPlayer: {fileID: 0}
+  MagentaPlayer: {fileID: 0}
+  YellowPlayer: {fileID: 0}
 --- !u!1 &7778144880563890943
 GameObject:
   m_ObjectHideFlags: 0

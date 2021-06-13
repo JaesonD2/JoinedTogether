@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5776697935791496486}
   - component: {fileID: 5776697935791496480}
   - component: {fileID: 6383953764512535833}
+  - component: {fileID: -6559654870201030549}
   m_Layer: 0
   m_Name: CyanSelector
   m_TagString: Untagged
@@ -135,3 +136,17 @@ MonoBehaviour:
   m_ShapePathHash: 0
   m_Mesh: {fileID: 0}
   m_InstanceId: -159948
+--- !u!114 &-6559654870201030549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5776697935791496485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0483b801e6816fd4b978932916d1df2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amplitude: 0.2
+  frequency: 0.5
