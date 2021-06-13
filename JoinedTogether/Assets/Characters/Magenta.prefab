@@ -135,6 +135,7 @@ MonoBehaviour:
   m_CeilingCheck: {fileID: 6494929616827436579}
   goBackwards: 0
   hasAudio: 0
+  currentlyActive: 0
   mySprite: {fileID: 6494929617258228540}
   OnLandEvent:
     m_PersistentCalls:
@@ -183,6 +184,7 @@ GameObject:
   - component: {fileID: 6494929617258228540}
   - component: {fileID: 6494929617896511635}
   - component: {fileID: 6494929617896511638}
+  - component: {fileID: 464000924314868617}
   m_Layer: 0
   m_Name: PlayerSprite
   m_TagString: Untagged
@@ -281,7 +283,26 @@ MonoBehaviour:
   - {x: -0.3, y: 0.5, z: 0}
   m_ShapePathHash: 0
   m_Mesh: {fileID: 0}
-  m_InstanceId: -95230
+  m_InstanceId: 47102
+--- !u!95 &464000924314868617
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6494929617896511637}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7f4e027e798f96049b4f3613c797ddf0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &6494929618224708805
 GameObject:
   m_ObjectHideFlags: 0

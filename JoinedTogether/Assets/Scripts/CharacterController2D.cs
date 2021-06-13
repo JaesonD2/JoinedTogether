@@ -27,6 +27,7 @@ public class CharacterController2D : MonoBehaviour
 	private AudioManager audioManager;
 
 	private Animator animator;
+	public bool currentlyActive;
 
 	public Transform mySprite;
 

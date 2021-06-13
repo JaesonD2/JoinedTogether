@@ -13,6 +13,10 @@ public class CharacterSelector : MonoBehaviour
     public GameObject YellowSelector;
     public GameObject MagentaSelector;
 
+    private Animator CyanAnimator;
+    private Animator MagentaAnimator;
+    private Animator YellowAnimator;
+
     private SpriteRenderer cyanRenderer;
     private SpriteRenderer yellowRenderer;
     private SpriteRenderer magentaRenderer;
@@ -52,6 +56,9 @@ public class CharacterSelector : MonoBehaviour
         normalYellow = yellowRenderer.color;
         fadedYellow = new Color(normalYellow.r, normalYellow.g, normalYellow.b, .5f);
 
+        CyanAnimator = CyanPlayer.GetComponentInChildren<Animator>();
+        MagentaAnimator = MagentaPlayer.GetComponentInChildren<Animator>();
+        YellowAnimator = YellowPlayer.GetComponentInChildren<Animator>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -62,6 +69,10 @@ public class CharacterSelector : MonoBehaviour
             cyanRB.constraints = RigidbodyConstraints2D.FreezeRotation;
             yellowRB.constraints = RigidbodyConstraints2D.FreezeAll;
             magentaRB.constraints = RigidbodyConstraints2D.FreezeAll;
+
+            CyanAnimator.SetBool("CurrentlyActive", true);
+            MagentaAnimator.SetBool("CurrentlyActive", false);
+            YellowAnimator.SetBool("CurrentlyActive", false);
 
             cyanRenderer.color = fadedCyan;
             yellowRenderer.color = normalYellow;
@@ -78,6 +89,10 @@ public class CharacterSelector : MonoBehaviour
             yellowRB.constraints = RigidbodyConstraints2D.FreezeAll;
             cyanRB.constraints = RigidbodyConstraints2D.FreezeAll;
 
+            CyanAnimator.SetBool("CurrentlyActive", false);
+            MagentaAnimator.SetBool("CurrentlyActive", true);
+            YellowAnimator.SetBool("CurrentlyActive", false);
+
             cyanRenderer.color = normalCyan;
             yellowRenderer.color = normalYellow;
             magentaRenderer.color = fadedMagenta;
@@ -93,6 +108,10 @@ public class CharacterSelector : MonoBehaviour
             magentaRB.constraints = RigidbodyConstraints2D.FreezeAll;
             cyanRB.constraints = RigidbodyConstraints2D.FreezeAll;
 
+            CyanAnimator.SetBool("CurrentlyActive", false);
+            MagentaAnimator.SetBool("CurrentlyActive", false);
+            YellowAnimator.SetBool("CurrentlyActive", true);
+
             cyanRenderer.color = normalCyan;
             yellowRenderer.color = fadedYellow;
             magentaRenderer.color = normalMagenta;
@@ -107,6 +126,10 @@ public class CharacterSelector : MonoBehaviour
             yellowRB.constraints = RigidbodyConstraints2D.FreezeAll;
             magentaRB.constraints = RigidbodyConstraints2D.FreezeAll;
             cyanRB.constraints = RigidbodyConstraints2D.FreezeAll;
+
+            CyanAnimator.SetBool("CurrentlyActive", false);
+            MagentaAnimator.SetBool("CurrentlyActive", false);
+            YellowAnimator.SetBool("CurrentlyActive", false);
 
             cyanRenderer.color = normalCyan;
             yellowRenderer.color = normalYellow;
