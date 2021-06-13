@@ -13,10 +13,16 @@ public class CharacterController2D : MonoBehaviour
 
 	const float k_GroundedRadius = .2f; // Radius of the overlap circle to determine if grounded
 	private bool m_Grounded;            // Whether or not the player is grounded.
-	const float k_CeilingRadius = .2f; // Radius of the overlap circle to determine if the player can stand up
 	private Rigidbody2D m_Rigidbody2D;
 	private bool m_FacingRight = true;  // For determining which way the player is currently facing.
 	private Vector3 m_Velocity = Vector3.zero;
+
+	private int coyoteAllowance = 5;
+	private int coyoteCount = 5;
+	private int jumpBuffer = 5;
+	private int jumpBufferAllowance = 5;
+
+	public bool goBackwards = false;
 
 	public Transform mySprite;
 
@@ -48,12 +54,13 @@ public class CharacterController2D : MonoBehaviour
 		{
 			if (colliders[i].gameObject != gameObject)
 			{
+				coyoteCount = 0;
 				m_Grounded = true;
 				if (!wasGrounded)
                 {
-					OnLandEvent.Invoke();
-                }
 					
+					OnLandEvent.Invoke();
+                }	
 			}
 		}
 	}
@@ -64,8 +71,17 @@ public class CharacterController2D : MonoBehaviour
 		//only control the player if grounded or airControl is turned on
 		if (m_Grounded || m_AirControl)
 		{
+			Vector3 targetVelocity = Vector2.zero;
+
 			// Move the character by finding the target velocity
-			Vector3 targetVelocity = new Vector2(move * 10f, m_Rigidbody2D.velocity.y);
+			if (!goBackwards)
+			{
+				targetVelocity = new Vector2(move * 10f, m_Rigidbody2D.velocity.y);
+			}
+			else
+			{
+				targetVelocity = new Vector2(move * 10f, m_Rigidbody2D.velocity.y);
+			}
 			// And then smoothing it out and applying it to the character
 			m_Rigidbody2D.velocity = Vector3.SmoothDamp(m_Rigidbody2D.velocity, targetVelocity, ref m_Velocity, m_MovementSmoothing);
 
@@ -82,13 +98,28 @@ public class CharacterController2D : MonoBehaviour
 				Flip();
 			}
 		}
-		// If the player should jump...
-		if (m_Grounded && jump)
+		// If the player wants to jump...
+		if (jump)
+			jumpBuffer = 0; // 4
+
+		if (coyoteCount < coyoteAllowance && jumpBuffer < jumpBufferAllowance)
 		{
+			coyoteCount = coyoteAllowance;
+			jumpBuffer = jumpBufferAllowance;
 			// Add a vertical force to the player.
 			m_Grounded = false;
-			m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
+			m_Rigidbody2D.velocity = new Vector2(m_Rigidbody2D.velocity.x, 0);
+			if (goBackwards)
+            {
+				m_Rigidbody2D.AddForce(new Vector2(0f, -m_JumpForce));
+			}
+			else
+            {
+				m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
+			}
 		}
+		coyoteCount++;
+		jumpBuffer++;
 	}
 
 

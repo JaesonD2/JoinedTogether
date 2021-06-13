@@ -127,6 +127,11 @@ PrefabInstance:
       propertyPath: yellowRB
       value: 
       objectReference: {fileID: 6494929616906202488}
+    - target: {fileID: 7778144880227436963, guid: 4fae5661a5136aa43a893fa397df0419,
+        type: 3}
+      propertyPath: m_JumpForce
+      value: 800
+      objectReference: {fileID: 0}
     - target: {fileID: 7778144880227436965, guid: 4fae5661a5136aa43a893fa397df0419,
         type: 3}
       propertyPath: m_Constraints
