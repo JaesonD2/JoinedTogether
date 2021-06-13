@@ -265,6 +265,7 @@ MonoBehaviour:
   m_CeilingCheck: {fileID: 7778144880563890942}
   goBackwards: 0
   hasAudio: 1
+  currentlyActive: 1
   mySprite: {fileID: 7778144878801080289}
   OnLandEvent:
     m_PersistentCalls:

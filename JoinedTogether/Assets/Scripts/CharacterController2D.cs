@@ -49,6 +49,11 @@ public class CharacterController2D : MonoBehaviour
 
 		if (OnLandEvent == null)
 			OnLandEvent = new UnityEvent();
+
+		if(currentlyActive)
+        {
+			animator.SetBool("CurrentlyActive",true);
+        }
 	}
 
 	private void FixedUpdate()

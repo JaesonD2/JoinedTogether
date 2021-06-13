@@ -4,9 +4,22 @@ using UnityEngine;
 
 public class ExitGame : MonoBehaviour
 {
+
+    public Animator transition;
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Something entered the exit");
+        StartCoroutine(Quit());
+    }
+
+    IEnumerator Quit()
+    {
+        //play animation
+        transition.SetTrigger("Start");
+        //wait
+        yield return new WaitForSeconds(1);
+
+        //load
+        Debug.Log("Quitting");
         Application.Quit();
     }
 }
